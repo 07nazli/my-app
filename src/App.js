@@ -1,10 +1,18 @@
-import User from "./components/User";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [name, setName] = useState("mario");
+
+  const handleClick = () => {
+    setName("harry");
+    console.log(name);
+  };
+
   return (
-    <div>
-      <User name="esma" age={18} />
-      <User name="nazlı" age={18} />
+    <div className="App">
+      <h1>My name is {name}</h1>
+      <button onClick={handleClick}>Change name</button>
     </div>
   );
 }
